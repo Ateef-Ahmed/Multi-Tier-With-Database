@@ -7,7 +7,7 @@ pipeline {
         dockerhubpwd = credentials('dockerpwd') // Replace 'DOCKERHUB_PASSWORD' with the appropriate credentials ID
     }
     
-   
+   stages {
         
         stage('Build and Analyze') {
             steps {
