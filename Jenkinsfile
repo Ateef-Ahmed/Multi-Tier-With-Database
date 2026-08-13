@@ -14,7 +14,7 @@ pipeline {
                 // Build the project and run SonarQube analysis
                 sh """
                 /usr/share/maven/bin/mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-                -Dsonar.projectKey=zafar90_Multi-Tier-With-Database \
+                -Dsonar.projectKey= Ateef-Ahmed_Multi-Tier-With-Database\
                 -Dsonar.organization=ateef-ahmed \
                 -Dsonar.host.url=https://sonarcloud.io \
                 -Dsonar.login=df3b7313f7c62476b0fb7cddb7655c46a96e1b41
