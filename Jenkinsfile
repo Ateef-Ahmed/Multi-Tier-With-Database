@@ -15,7 +15,7 @@ pipeline {
                 sh """
                 /usr/share/maven/bin/mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                 -Dsonar.projectKey=zafar90_Multi-Tier-With-Database \
-                -Dsonar.organization=zafar90-github \
+                -Dsonar.organization=ateef-ahmed \
                 -Dsonar.host.url=https://sonarcloud.io \
                 -Dsonar.login=df3b7313f7c62476b0fb7cddb7655c46a96e1b41
                 """
