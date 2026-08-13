@@ -7,13 +7,7 @@ pipeline {
         dockerhubpwd = credentials('dockerpwd') // Replace 'DOCKERHUB_PASSWORD' with the appropriate credentials ID
     }
     
-    stages {
-        stage('Checkout Code') {
-            steps {
-                // Checkout code from GitHub repository
-                git branch: 'patch-1', url: 'https://github.com/Ateef-Ahmed/Multi-Tier-With-Database.git'
-            }
-        }
+
         
         stage('Build and Analyze') {
             steps {
