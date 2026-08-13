@@ -22,7 +22,7 @@ pipeline {
                 }                        
             }                       
         }
-   }
+   
         stage('Test') {
             steps {
                 // Run Maven package to ensure tests are executed
