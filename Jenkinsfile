@@ -19,7 +19,7 @@ pipeline {
             steps {
                 // Build the project and run SonarQube analysis
                 sh """
-                /opt/maven/bin/mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+                /usr/share/maven/bin/mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                 -Dsonar.projectKey=zafar90_Multi-Tier-With-Database \
                 -Dsonar.organization=zafar90-github \
                 -Dsonar.host.url=https://sonarcloud.io \
@@ -31,7 +31,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run Maven package to ensure tests are executed
-                sh "/opt/maven/bin/mvn package"
+                sh "/usr/share/maven/bin/mvn package"
             }
         }
 
