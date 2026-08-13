@@ -31,7 +31,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run Maven package to ensure tests are executed
-                sh "/opt/maven/bin/mvn package"
+                sh "/usr/share/maven/bin/mvn package"
             }
         }
 
