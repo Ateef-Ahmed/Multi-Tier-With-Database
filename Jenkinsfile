@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Checkout code from GitHub repository
-                git 'https://github.com/zafar90/Multi-Tier-With-Database.git'
+                git branch: 'patch-1', url: 'https://github.com/Ateef-Ahmed/Multi-Tier-With-Database.git'
             }
         }
         
