@@ -8,19 +8,20 @@ pipeline {
     }
     
    stages {
-        
         stage('Build and Analyze') {
             steps {
                 // Build the project and run SonarQube analysis
+                withCredentials([string(credentialsID: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                 sh """
                 /opt/maven/bin/mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                 -Dsonar.projectKey=Ateef-Ahmed_Multi-Tier-With-Database \
                 -Dsonar.organization=ateef-ahmed \
                 -Dsonar.host.url=https://sonarcloud.io \
-                -Dsonar.token=759cd92b921f330a77a4a4376a03e85d66435844
+                -Dsonar.token=$SONAR_TOKEN 
                 """
-            }
-        }
+                }                        
+                                        
+        
 
         stage('Test') {
             steps {
