@@ -6,7 +6,7 @@ pipeline {
         appimage = "intdoc89/bankapp:latest"
     }
     
-   
+   stages {
         stage('Build and Analyze') {
             steps {
                 // Build the project and run SonarQube analysis
@@ -20,8 +20,9 @@ pipeline {
                 """
             }
         }
+    } 
 
-        stage('Test') {
+       stage('Test') {
             steps {
                 // Run Maven package to ensure tests are executed
                 sh "/opt/maven/bin/mvn package"
@@ -34,7 +35,7 @@ pipeline {
                 sh "docker build -t ${appimage} ."
             }
         }
-
+   
         stage('Docker Login and Push') {
             steps {
                 // Log in to DockerHub and push the image
@@ -47,7 +48,7 @@ pipeline {
                 sh "docker push ${appimage}"
             }
             }
-        }
+        
 
         stage('Deploy to Kubernetes') {
             steps {
@@ -57,4 +58,4 @@ pipeline {
             }
         }
     }
-
+}
