@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         // Define the app image and Docker credentials
-        appimage = "intdoc89/bankapp:latest"
+        appimage = "ateef12345/bankapp:latest"
     }
     
    stages {
