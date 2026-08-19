@@ -39,11 +39,11 @@ pipeline {
             steps {
                 // Log in to DockerHub and push the image
                 withCredentials([usernamePassword(
-                    credentialsId: 'dockerpwd'
+                    credentialsId: 'dockerpwd',
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                     )])
-                sh "docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
+                sh 'echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin'
                 sh "docker push ${appimage}"
             }
             }
