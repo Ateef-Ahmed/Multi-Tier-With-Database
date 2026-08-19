@@ -47,8 +47,8 @@ pipeline {
                 sh 'echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin'
                 sh "docker push ${appimage}"
             }
-            }
-        
+         }
+    } 
 
         stage('Deploy to Kubernetes') {
             steps {
@@ -56,7 +56,6 @@ pipeline {
                // sh "ansible-playbook localhost ansible.yaml"
                   sh "kubectl apply -f ds.yml"
             }
-        }
+        }    
     }
-}
 }
